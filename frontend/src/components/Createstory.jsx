@@ -56,7 +56,8 @@ const StoryForm = ({ close, story }) => {
     if (["jpg", "jpeg", "png", "gif", "bmp", "webp"].includes(extension)) {
       return "photo";
     } else if (
-      ["mp4", "webm", "ogg", "mov", "avi", "mkv"].includes(extension)
+      ["mp4", "webm", "ogg", "mov", "avi", "mkv"].includes(extension) ||
+      /youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com|facebook\.com|tiktok\.com/.test(url)
     ) {
       return "video";
     }

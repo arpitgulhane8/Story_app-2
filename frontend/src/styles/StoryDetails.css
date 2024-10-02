@@ -1,0 +1,247 @@
+.storyDetails-container {
+  position: relative;
+  width: 320px;
+  height: 510px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(180, 178, 178, 0.664);
+}
+
+.storyDetails-progress-bars {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 2;
+}
+
+.storyDetails-progress-indicator {
+  flex-grow: 1;
+  height: 100%;
+  margin: 0 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.storyDetails-progress-indicator.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  animation: progress 15s linear forwards;
+  width: 100%;
+}
+
+.storyDetails-progress-indicator.instant {
+  animation: none;
+  background-color: white;
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.storyDetails-close-button,
+.storyDetails-share-button {
+  position: absolute;
+  top: 35px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 3;
+  transition: color 0.3s ease;
+}
+
+.storyDetails-close-button {
+  left: 10px;
+}
+
+.storyDetails-share-button {
+  right: 10px;
+}
+
+.storyDetails-share-button:hover {
+  color: #1e90ff;
+}
+
+.storyDetails-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.storyDetails-media img,
+.storyDetails-media video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.storyDetails-info {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  z-index: 1;
+  text-align: left;
+}
+
+.storyDetails-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.storyDetails-info p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.storyDetails-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.storyDetails-like-section {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.storyDetails-like-button,
+.storyDetails-bookmark-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.storyDetails-like-button:hover,
+.storyDetails-bookmark-button:hover {
+  transform: scale(1.3);
+}
+
+.storyDetails-like-button.active {
+  color: red;
+}
+
+.storyDetails-bookmark-button.active {
+  color: blue;
+}
+
+.storyDetails-like-section span {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.storyCard-modaloverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.918);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  text-align: center;
+  align-content: center;
+}
+
+.previous,
+.next {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  position: relative;
+  transform: translateY(-50%);
+  z-index: 1001;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.previous {
+  right: 120px;
+}
+
+.next {
+  left: 120px;
+}
+
+.previous:hover,
+.next:hover {
+  color: lightgray;
+}
+
+.storyCard-wraper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+  .storyDetails-container {
+    width: 100%;
+    height: 100%;
+  }
+  .next,
+  .previous {
+    display: none;
+  }
+  .storyCard-wraper{
+   width: 100%;
+   height: 100%;
+  }
+}
+
+.storyDetails-download-button {
+  background-color: black;
+  color: #fff;
+  border: none;
+  font-size: larger;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.storyDetails-download-button:hover {
+  transform: scale(1.2);
+}
+
+

@@ -1,0 +1,233 @@
+.navbar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #ffffff;
+  color: #333;
+  height: 11vh;
+  box-shadow: 0px 4px 10px rgba(5, 5, 5, 0.1);
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #ff7373;
+  transition: all 0.4s ease-in-out;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 30vh;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.nav-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#btn-register {
+  background-color: #ff7373;
+}
+
+#btn-signup {
+  background-color: #73abff;
+}
+
+.nav-button:hover {
+  background-color: #ff3336;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+}
+
+.hamburger-icon {
+  font-size: 2rem;
+  color: #333;
+}
+
+.hamburger-menu:hover .hamburger-icon {
+  color: #555;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 12vh;
+  right: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+  font-family: "DM Sans", sans-serif;
+}
+
+.logout-button {
+  background-color: #ff7373;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover {
+  background-color: #ff3336;
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 12vh;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 90%;
+  z-index: 1000;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-nav-button {
+  width: 80%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #ff7373;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  margin-bottom: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-nav-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.mobile-nav-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mobile-nav-button:hover {
+  background-color: #ff3336;
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@media screen and (max-width: 650px) {
+  .nav-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.navbar-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  color: #ff3336;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.nav-back{
+  position:absolute;
+  left: 10px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #888686;
+  top: 16px;
+  font-weight: 200;
+}

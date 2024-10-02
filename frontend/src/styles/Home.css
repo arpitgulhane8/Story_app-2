@@ -1,0 +1,136 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 12vh;
+}
+
+.home-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.category-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  overflow-x: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #eee;
+}
+
+.category-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.category-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.category-container::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+.category-btn {
+  width: 10vw;
+  height: 15vh;
+  margin: 0 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #6d5eac, #b69cd9);
+}
+
+.category-btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-btn.active {
+  background: linear-gradient(135deg, #b69cd9, #6d5eac);
+  transform: scale(1.05);
+  border: 3px solid blue;
+}
+
+.category-btn:hover {
+  transform: scale(1.08);
+}
+
+.category-btn:hover:after {
+  opacity: 1;
+}
+
+.category-btn.active:hover:after {
+  opacity: 0.3;
+}
+
+.stories-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home_percatagory_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.home_percatagory {
+  margin: 20px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .category-container {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .category-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-btn {
+    width: 30vw;
+    height: 15vh;
+  }
+}

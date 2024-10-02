@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const API_URL = https://story-app-2-1.onrender.com;
+const API_URL = 'https://story-app-2-1.onrender.com/api';
 
 export const registerUser = async (userData) => {
   try {

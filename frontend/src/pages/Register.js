@@ -44,6 +44,7 @@ const Register = ({ handleClose }) => {
               type={showPassword ? "text" : "password"}
               id="login-password"
               placeholder="Password"
+              value={password}
               className="auth-wraper-input"
               onChange={(e) => setPassword(e.target.value)}
               required

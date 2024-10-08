@@ -28,6 +28,7 @@ const Login = ({ handleClose }) => {
             id="login-username"
             placeholder="Username"
             className="auth-input"
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
@@ -42,6 +43,7 @@ const Login = ({ handleClose }) => {
               type={showPassword ? "text" : "password"}
               id="login-password"
               placeholder="Password"
+              value={password}
               className="auth-wraper-input"
               onChange={(e) => setPassword(e.target.value)}
               required

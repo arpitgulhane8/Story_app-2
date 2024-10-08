@@ -33,7 +33,7 @@ exports.register = async (req, res) => {
 
 //Existing user login controller
 exports.login = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
     const existingUser = await User.findOne({ email });
